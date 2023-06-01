@@ -1,0 +1,162 @@
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  body {
+      background-color: #161616;
+      font-family: 'Montserrat', sans-serif;
+  }
+
+  header nav {
+      padding: 2rem;
+      padding-bottom: .8rem;
+      color: #fff;
+  }
+
+  header nav span {
+      color: #FEE27D;
+  }
+
+  header nav li {
+      list-style-type: none;
+  }
+
+  header nav li a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #fff;
+      font-size: .9rem;
+  }
+
+  header nav .user_container p {
+      font-weight: 300;
+      font-size: .75rem;
+  }
+
+  header nav .user_container img {
+      width: 3rem;
+  }
+
+  main {
+      padding: 0 2rem;
+  }
+
+  main .container {
+      width: 100%;
+      border-radius: 1rem;
+      background-color: rgba(58, 58, 58, 0.2);
+  }
+
+  main .container_navbar {
+      height: 3.5rem;
+      margin-bottom: 1rem;
+  }
+
+  main .container article .icon_container {
+      height: 3.5rem;
+      width: 2rem;
+      border-top: 2px solid transparent;
+  }
+
+  main .container article .icon_container:hover {
+      border-top: 2px solid #FEE27D;
+      transition: .3s;
+      cursor: pointer;
+  }
+
+  main .container article .icon_container:hover .background_icon {
+      background-color: rgba(81, 81, 81, 0.4);
+  }
+
+  main .container article .icon_container:hover .background_icon i {
+      color: #FEE27D;
+  }
+
+  main .container article .icon_container-active {
+      border-top: 2px solid #FEE27D;
+  }
+
+  main .container article .background_icon {
+      height: 2rem;
+      width: 2rem;
+      border-radius: .3rem;
+  }
+
+  main .container article .background_icon i {
+      font-size: 1rem;
+      color: #fff;
+  }
+
+  .active {
+      background-color: rgba(81, 81, 81, 0.4);
+  }
+
+  main .container article .background_icon .active_icon {
+      color: #FEE27D;
+  }
+
+  main .container_movies {
+      height: 24rem;
+  }
+
+  main .container_movies article {
+      height: 100%;
+  }
+
+  @media (min-width: 768px) {}
+
+  @media (min-width: 998px) {
+      header nav {
+          padding: 1.5rem 3rem;
+      }
+
+      header nav li a {
+          font-size: 1.3rem;
+      }
+
+      main .container_navbar {
+          width: 7rem;
+          height: 33rem;
+          margin-bottom: 0;
+          padding: 0;
+      }
+
+      main .container_navbar article {
+          height: 93%;
+      }
+
+      main .container_movies {
+          height: 33rem;
+      }
+
+      main .container article .icon_container {
+          margin-top: 1.2rem;
+          width: 100%;
+          height: 3.5rem;
+          border-left: 2px solid transparent;
+          border-top: 0;
+          display: flex;
+          justify-content: center;
+      }
+
+
+      main .container article .icon_container-active {
+          border-top: 0;
+          border-left: 2px solid #FEE27D;
+      }
+
+      .border_icons {
+          width: 100%;
+      }
+
+      main .container article .icon_container:hover {
+          border-top: 0;
+          border-left: 2px solid #FEE27D;
+          transition: .3s;
+          cursor: pointer;
+      }
+  }
