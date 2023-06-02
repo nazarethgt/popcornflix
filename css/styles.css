@@ -155,7 +155,7 @@
 
       main .container article .icon_container:hover {
           border-top: 0;
-          border-left: 2px solid #b33223;
+          border-left: 2px solid #FEE27D;
           transition: .3s;
           cursor: pointer;
       }
