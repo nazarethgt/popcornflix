@@ -44,16 +44,10 @@ function print(dataPopcornflix) {
         cardMovie.innerHTML = movieHTML;
     } else {
         // Manejar la situación cuando vinosArray no es un array válido
-        console.error("vinosArray no es un array válido:", dataPopcornflix);
+        console.error("dataPopcornflix no es un array válido:", dataPopcornflix);
     }
 
 }
 
 
 
-
-
-
-
-
-<!--esta función me trae todo el array de datos cargado en el firebase-->
