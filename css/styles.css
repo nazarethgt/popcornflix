@@ -11,6 +11,10 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+img {
+    width: 100%;
+}
+
 .card {
     padding-top: 5%;
     height: 40%;
@@ -45,11 +49,7 @@ body {
     text-decoration: none;
 }
 
-.tittleMovie,
-.fa-star {
-    font-size: 1.2rem;
-    color: rgb(243, 241, 239);
-}
+
 
 .inputSearch {
     padding-left: 5%;
@@ -194,6 +194,64 @@ main .container article .background_icon i {
 main .container article .background_icon .active_icon {
     color: #FEE27D;
 }
+/* inicio cambios Nazareth - Estilos de contenedor de todas las tarjetas y tarjetas con logica de js */
+.containerMovie {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.card-movie {
+    width: 178px;
+    height: 329px;
+    margin: 10px; 
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.2);
+    /* mix-blend-mode: overlay; */
+    border-radius: 15px;
+
+}
+
+.card-movie img{
+    border-radius: 15px;
+}
+
+.textCard {
+    margin: auto;
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+}
+
+.textCard h3 {
+    width: 70%;
+    font-size: 14px;
+    color: rgb(243, 241, 239);
+    line-height: 15px;
+    margin-top: 0;
+}
+
+.textCard p {
+    font-size: 14px;
+    color: rgb(243, 241, 239);
+    line-height: 15px;
+
+}
+
+.fa-star {
+    font-size: 12px;
+    color: rgb(243, 241, 239);
+    margin-right: 2px;
+}
+
+/* fin cambios Nazareth */
 
 main .container_movies {
     height: auto;
@@ -204,17 +262,20 @@ main .container_movies article {
 }
 
 @media (max-width: 768px) {
-    .inputSearch{
+    .inputSearch {
         width: 70%;
     }
-    .dropdown{
+
+    .dropdown {
         width: 20%;
         padding-left: 10%;
     }
-    .nav{
+
+    .nav {
         padding-bottom: 2%;
     }
-    .card{
+
+    .card {
         padding: 5%;
     }
 }
