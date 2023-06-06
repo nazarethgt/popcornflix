@@ -12,8 +12,14 @@ firebase.initializeApp(firebaseConfig);
 
 const coleccionPopcornflix = firebase.firestore().collection("Popcornflix");
 
+var inputSearch = document.getElementById("inputSearch")
+
+
 let dataPopcornflix = [];
 var cardMovie = document.getElementById("cardMovie");
+var lmv = document.getElementById("lmv");
+var portada = document.getElementById("portada")
+
 async function fetchData() {
     const querySnapshot = await coleccionPopcornflix.get();
     querySnapshot.forEach((doc) => {
@@ -29,8 +35,6 @@ function print(dataPopcornflix) {
     if (Array.isArray(dataPopcornflix)) {
         const movieHTML = dataPopcornflix.map(dataMovies =>
             `
-           
-
             <div class="card-movie"> <!-- esta es la card -->
                 <img src="${dataMovies.image}" alt="movie">
                 <div class="textCard">
@@ -47,7 +51,59 @@ function print(dataPopcornflix) {
         console.error("dataPopcornflix no es un array válido:", dataPopcornflix);
     }
 
+    var filtrarMovies = document.getElementById("arrayAFiltrar")
+    var searchContainer = document.getElementById("searchContainer")
+    
+       const filtrar = () => {
+        filtrarMovies.innerHTML = '';
+        lmv.style.display = "none"
+        portada.style.display = "none"
+        cardMovie.style.display = "none"
+        const text = inputSearch.value.toLowerCase();
+        for(let producto of dataPopcornflix){  
+        const nombre = producto.name.toLowerCase();
+        if(nombre.indexOf(text) !== -1){
+                filtrarMovies.innerHTML += //comeinza a imprimir las cards
+                
+                `
+                <div class="card-movie"> <!-- esta es la card -->
+                    <img src="${producto.image}" alt="movie">
+                    <div class="textCard">
+                        <h3>${producto.name}</h3>
+                        <p><i class="fa-solid fa-star" style="color: #f0cc19;"></i>${producto.stars}</p>
+                    </div>
+                </div>
+                `
+                
+            }
+        }
+    
+        if(filtrarMovies === ''){
+            filtrarMovies.innerHTML += 
+            
+            `<li> Product no encontrado</li>`
+            
+        }
+    }
+    const inicio = () => {
+        lmv.style.display = "block";
+        portada.style.display = "block"
+        cardMovie.style.display = "flex"
+        filtrarMovies.innerHTML = ""
+    }
+    inputSearch.addEventListener("keyup", filtrar)
+    inputSearch.addEventListener("blur", inicio)
+
+ 
 }
+
+
+
+
+
+
+
+
 
 
 
